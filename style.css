@@ -1,17 +1,17 @@
 .hi {
   border-collapse: collapse;
+
   margin-top: 20px;
 }
 
 td {
   border: 2px solid rgb(7, 7, 7);
+
   padding: 40px;
 }
 
-.hi tr:nth-child(odd) td:nth-child(odd) {
-  background: rgb(0, 0, 0);
-}
-.hi tr:nth-child(even) td:nth-child(even) {
+.hi tr:nth-child(odd) td:nth-child(odd),
+tr:nth-child(even) td:nth-child(even) {
   background: rgb(0, 0, 0);
 }
 
@@ -26,10 +26,57 @@ a {
   border: solid 1px rgb(0, 0, 0);
   position: relative;
   text-decoration: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 a:hover {
   box-shadow: 2px 2px 4px rgba(51, 51, 51, 0.85);
   text-shadow: 0.5px 0.5px rgb(53, 49, 49);
   top: -2px;
+}
+
+.box {
+  background-color: rgb(179, 173, 173);
+  margin: auto;
+  width: 700px;
+  height: 200px;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+h1 {
+  font-size: 45px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.box p {
+  margin-top: -30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.box::before,
+.box::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  height: 15px;
+  max-width: 300px;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  transform: rotate(-3deg);
+}
+
+.box:after {
+  right: 10px;
+  left: auto;
+  transform: rotate(3deg);
 }
